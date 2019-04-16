@@ -2,7 +2,7 @@
 Для развертывания Nomad на Ubuntu старше версии 16.0 :
 
 - установить libvirt
-- установить VirtualBox, оригинальный гайд:
+- **установить VirtualBox**, оригинальный гайд:
   [How to Install Oracle VirtualBox On Ubuntu 18.04 LTS Headless Server](https://www.ostechnix.com/install-oracle-virtualbox-ubuntu-16-04-headless-server/)
   
     Добавим официальный репозиторий Oracle VirtualBox. Редактируем файл /etc/apt/sources.list:
@@ -36,10 +36,34 @@
     $ sudo apt install virtualbox-5.2
     ```
 
-- развернуть Vagrant
+- **развернуть Vagrant**
     
     На [официальном сайте утилиты](https://www.vagrantup.com/docs/installation/) рекомендую качать инсталлер, но его так же можно установить из репозитория apt:
     ```
     $ sudo apt-get install vagrant
     ```
+    При попытке запуска Vagrant иногда можно увидеть следующее сообщение об ошибке:
+    ```
+    There was an error while executing `VBoxManage`, a CLI used by Vagrant for controlling VirtualBox. The command and stderr is shown below.
+    
+    Command: ["startvm", <ID of the VM>, "--type", "headless"]
+
+    Stderr: VBoxManage: error: VT-x is being used by another hypervisor (VERR_VMX_IN_VMX_ROOT_MODE).
+    VBoxManage: error: VirtualBox can't operate in VMX root mode. Please disable the KVM kernel extension, recompile your kernel and reboot
+    (VERR_VMX_IN_VMX_ROOT_MODE)
+    VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IConsole
+    ```
+    Это связано с тем, что в системе на данный момент используется другой гипервизор (например, KVM)
+    Проверим:
+    ```
+    $ lsmod | grep kvm
+    kvm_intel             204800  6
+    kvm                   593920  1 kvm_intel
+    irqbypass              16384  1 kvm
+    ```
+    Если у вас аналогичное сообщение - добавим этот гипервизор в черный список:
+    ```
+    # echo 'blacklist kvm-intel' >> /etc/modprobe.d/blacklist.conf
+    ```
+    
     
