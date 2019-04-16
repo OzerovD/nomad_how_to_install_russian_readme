@@ -94,4 +94,4 @@
     vagrant@nomad:~$ sudo nomad agent -dev
     ```
     
-    
+По материалам [Vagrant](https://www.vagrantup.com/docs/installation/) и [NomadProject](https://www.nomadproject.io/intro/getting-started/jobs.html)
