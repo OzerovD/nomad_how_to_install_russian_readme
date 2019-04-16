@@ -35,6 +35,14 @@
     ```
     $ sudo apt install virtualbox-5.2
     ```
+    После этого нужно добавить своего пользователя в группу `vboxusers`:
+    ```
+    $ sudo usermod -aG vboxusers youruser
+    ```
+    Проверяем, запущен ли VirtualBox:
+    ```
+    $ sudo systemctl status vboxdrv
+    ```
 
 - **развернуть Vagrant**
     
