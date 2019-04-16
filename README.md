@@ -2,7 +2,7 @@
 Для развертывания Nomad на Ubuntu старше версии 16.0 :
 
 - установить libvirt
-- установить VirtualBox
+- установить VirtualBox, оригинальный гайд:
   [How to Install Oracle VirtualBox On Ubuntu 18.04 LTS Headless Server](https://www.ostechnix.com/install-oracle-virtualbox-ubuntu-16-04-headless-server/)
   
     Добавим официальный репозиторий Oracle VirtualBox. Редактируем файл /etc/apt/sources.list:
