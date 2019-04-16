@@ -1,4 +1,4 @@
-![](nomad.jpg)
+[![](nomad.jpg)](https://www.nomadproject.io/)
 
 # nomad
 Для развертывания Nomad на Ubuntu старше версии 16.0 :
