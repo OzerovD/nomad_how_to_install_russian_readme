@@ -35,6 +35,11 @@
     ```
     $ sudo apt install virtualbox-5.2
     ```
-    
-    
+
 - развернуть Vagrant
+    
+    На [официальном сайте утилиты](https://www.vagrantup.com/docs/installation/) рекомендую качать инсталлер, но его так же можно установить из репозитория apt:
+    ```
+    $ sudo apt-get install vagrant
+    ```
+    
