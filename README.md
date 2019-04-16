@@ -13,6 +13,14 @@
     ```
     deb http://download.virtualbox.org/virtualbox/debian bionic contrib
     ```
-    Если у вас другая версия Ubuntu - замените *bionic* на имя дистрибутива своей версии Ubuntu: *xenial*, *vivid*, *utopic*, *trusty*, *raring*, *quantal*, *precise*, *lucid*, *jessie*, *wheezy*, или *squeeze*
+    Если у вас другая версия Ubuntu - замените *bionic* на имя дистрибутива своей версии Ubuntu: 
+    - 16.04 *xenial*, 
+    - 15.04 *vivid*, 
+    - 14.10 *utopic*, 
+    - 14.04 *trusty*, 
+    - 13.04 *raring*, 
+    - 12.10 *quantal*, 
+    - 12.04 *precise*, 
+    - 10.04 *lucid*
     
 - развернуть Vagrant
